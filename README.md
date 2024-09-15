@@ -41,21 +41,20 @@ or
 ```bash
 poetry run assistant
 ```
-
 This command initializes the assistant Crew, assembling the agents and assigning them tasks as defined in your configuration.
+
+## Run GUI version
+
+To run the GUI version of the assistant, run this from the gui folder:
+
+```bash
+streamlit run app.py
+```
+
+Your default browser will open with the GUI version of the assistant.
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
 ## Understanding Your Crew
 
 The assistant Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the Assistant Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
