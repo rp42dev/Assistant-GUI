@@ -12,9 +12,10 @@ task_options = {
 
 class AppUI:
     
-    def generate_report(self, topic, description, year):
+    def generate_report(self, topic, industry, description,  year):
         inputs = {
             "topic": topic,
+            "industry": industry,
             "description": description,
             "year": year
         }
@@ -27,6 +28,7 @@ class AppUI:
             st.write("Enter the topic and details of the research")
            
             topic = st.text_input("Topic", key="topic", placeholder="Enter the topic")
+            industry = st.text_input("Industry", key="industry", placeholder="Enter the industry")
             description = st.text_area("Details", key="details", placeholder="Enter the details")
             
             if st.button("Start Research"):
@@ -38,6 +40,8 @@ class AppUI:
         st.set_page_config(page_title="Research Assistant", page_icon="🔍")
         if "topic" not in st.session_state:
             st.session_state["topic"] = ""
+        if "industry" not in st.session_state:
+            st.session_state["industry"] = ""
         if "details" not in st.session_state:
             st.session_state["details"] = ""
         if "report" not in st.session_state:
@@ -51,6 +55,7 @@ class AppUI:
             with st.chat_message("AI"):
                 st.session_state["report"] = self.generate_report(
                     st.session_state["topic"],
+                    st.session_state["industry"],
                     st.session_state["details"],
                     year
                 )

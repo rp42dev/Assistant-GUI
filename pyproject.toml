@@ -8,6 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = ">=3.10,<=3.13"
 crewai = { extras = ["tools"], version = "^0.51.0" }
 streamlit = "^1.38.0"
+duckduckgo-search = "^7.2.0"
 
 [tool.poetry.scripts]
 assistant = "assistant.main:run"

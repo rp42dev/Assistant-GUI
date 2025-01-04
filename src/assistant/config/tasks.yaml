@@ -2,7 +2,7 @@
 research_task:
   description: >
     Conduct thorough market research on the specified Niche: {topic}: and description: {description}: provided by the user.
-    Focus on gathering data related to the target customer and their competitors within the coaching industry.
+    Focus on gathering data related to the target customer and their competitors within the {industry} industry.
     Utilize online sources to collect information on demographics, preferences, market positioning, audience engagement,
     and emerging trends to provide a comprehensive overview of the market landscape. Make sure data is for year {year} if possible.
 
@@ -10,7 +10,7 @@ research_task:
     1. A detailed report summarizing the key findings from the market research, including:
        - Customer Profiles: Detailed descriptions of target customers, their preferences, and demographics.
        - Competitor Analysis: Insights on key competitors, their market positioning, and audience engagement strategies.
-       - Market Trends: Identification of emerging trends and opportunities within the coaching industry.
+       - Market Trends: Identification of emerging trends and opportunities within the {industry} industry.
     2. The report should be well-structured, informative, and data-driven, presenting key insights in a clear and concise manner.
     3. Include source URLs for all data points for reporting agent to verify the information and ensure accuracy.
 
@@ -18,7 +18,7 @@ reporting_task:
   description: >
     Develop a comprehensive and well-structured report based on the research findings from the research agent. 
     Use the WebsiteSearchTool to find additional relevant data if necessary, URL's should be included in the report.
-    The report should include actionable recommendations to support strategic decision-making in the coaching industry.
+    The report should include actionable recommendations to support strategic decision-making in the {industry} industry.
 
   expected_output: >
     1. A detailed report summarizing the key findings from the market research, including:
