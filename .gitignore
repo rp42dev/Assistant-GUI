@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+secrets.toml
 
 # Spyder project settings
 .spyderproject
@@ -163,4 +164,8 @@ cython_debug/
 *.json
 *.csv
 
+.codegpt
+*.sqlite3
+*.db
+*.sqlite
 .codegpt
