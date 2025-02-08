@@ -1,29 +1,73 @@
-
 research_task:
   description: >
-    Conduct thorough market research on the specified Niche: {topic}: and description: {description}: provided by the user.
-    Focus on gathering data related to the target customer and their competitors within the {industry} industry.
-    Utilize online sources to collect information on demographics, preferences, market positioning, audience engagement,
-    and emerging trends to provide a comprehensive overview of the market landscape. Make sure data is for year {year} if possible.
-
+    Research and gather data on target customers, competitors, and market trends for Topic: {topic} Description: {description} in {industry} within {location} for the current year {year}.
   expected_output: >
-    1. A detailed report summarizing the key findings from the market research, including:
-       - Customer Profiles: Detailed descriptions of target customers, their preferences, and demographics.
-       - Competitor Analysis: Insights on key competitors, their market positioning, and audience engagement strategies.
-       - Market Trends: Identification of emerging trends and opportunities within the {industry} industry.
-    2. The report should be well-structured, informative, and data-driven, presenting key insights in a clear and concise manner.
-    3. Include source URLs for all data points for reporting agent to verify the information and ensure accuracy.
+    A structured document containing the following information:
+      - Overview of target customer demographics, preferences, and behaviors.
+        - Tabulated data on age groups
+        - Customer preferences and buying behaviors
+        - Customer needs and pain points
+      - Detailed analysis of key competitors in the industry make sure include namer of the competitors.
+        - SWOT analysis of top 3 competitors
+        - Market share comparison
+        - Competitor pricing analysis.
+        - Competitor product/service offerings
+      - Insights into current market trends, opportunities, and potential threats.
+        - Emerging trends in the industry
+        - Market growth projections
+        - Potential market entry barriers
+      - Source URLs for all data points to ensure credibility and traceability.
+    steps:
+      - Use the Internet Search Tool to gather broad data on target customers, competitors, and market trends.
+      - Shortlist 5 high-quality resources for detailed analysis.
+      - Use the "Search in a specific website" tool to extract detailed insights from the shortlisted sources.
+      - Compile the data into a structured document with clear headings and subheadings.
+      - Include source URLs for all data points to ensure credibility.
+
+chart_generation_task:
+  description: >
+    Use data from the research task to generate visual charts for better data representation.
+    Pass the data to the [Chart Generation Tool] to create charts for target customers, competitors, and market trends.
+    Suppored chart types: bar, pie, line.
+  expected_output: >
+    steps:
+      - Extract relevant data from the research_task output.
+      - Identify the key data points that need to be represented in charts.
+      - Choose the appropriate chart type for each data set as per the following guidelines:
+        - Chart 1: Target Customer Demographics Bar Chart
+        - Chart 2: Competitor Market Share Comparison Pie Chart
+        - Chart 3: Market share comparison Pie Chart
+        - Chart 4: Market Growth Projections Line Chart
+      - Format the data for input into the "Chart Generation Tool" in the following format:
+          "{\"argument\": \"{\\\"chart_type\\\": \\\"line\\\", \\\"data\\\": [10, 20, 15, 25], \\\"labels\\\": [\\\"Competitor A\\\", \\\"Competitor B\\\", \\\"Competitor C\\\", \\\"Competitor D\\\"], \\\"title\\\": \\\"Competitive Positioning Analysis\\\", \\\"xlabel\\\": \\\"Competitors\\\", \\\"ylabel\\\": \\\"Market Share (%)\\\"}\"}"  # Example input for generating a line chart.
+    - Compile output as in the example below:
+        {
+          "Topic": {
+            "url": "",
+            "description": ""
+          },
+          "Topic": {
+            "url": "",
+            "description": ""
+          }
+        }
 
 reporting_task:
   description: >
-    Develop a comprehensive and well-structured report based on the research findings from the research agent. 
-    Use the WebsiteSearchTool to find additional relevant data if necessary, URL's should be included in the report.
-    The report should include actionable recommendations to support strategic decision-making in the {industry} industry.
-
+    Compile an insightful report based on the research data and chart insights.
+    Your final answer must be the great and the most complete as possible, it must be outcome described
   expected_output: >
-    1. A detailed report summarizing the key findings from the market research, including:
-       - Customer and Competitor Profiles: Detailed descriptions of target customers and competitor analysis.
-       - Market Landscape Overview: Insights on demographics, preferences, market positioning, audience engagement, and emerging trends.
-       - Recommendations: Actionable suggestions based on the research data to support strategic decision-making.
-    2. The report should be clear, concise, and visually engaging, presenting data in a format that is easy to understand and interpret.
-    3. Include source URLs for all data points to ensure transparency and credibility of the information provided.
+    - A comprehensive report with the following sections:
+      - Executive Summary
+      - Target Customer Analysis
+      - Competitive Analysis
+      - Market Trends & Opportunities
+      - Data Insights & Recommendations
+      - References & Sources
+    steps:
+      - Structure the report with clear headings and subheadings.
+      - Make sure all the necessary information is included in each section.
+      - Include all Charts provided in respective sections.
+      - If chart image urls are provided, do not include the tables with same data.
+      - Provide actionable recommendations based on the insights.
+      - Cite all sources and references used in the report.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-from assistantt.crew import AssistantCrew
+from assistant.crew import AssistantCrew
 
 
 # This main file is intended to be a way for your to run your

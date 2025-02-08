@@ -2,13 +2,14 @@
 name = "assistant"
 version = "0.1.0"
 description = "assistant using crewAI"
-authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+authors = ["Raivis Petrovskis <info@iammobilefriendly.dev>"]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
-crewai = { extras = ["tools"], version = "^0.51.0" }
+python = "<3.13,>=3.10"
 streamlit = "^1.38.0"
 duckduckgo-search = "^7.2.0"
+crewai = {extras = ["tools"], version = "^0.95.0"}
 
 [tool.poetry.scripts]
 assistant = "assistant.main:run"
